@@ -18,10 +18,23 @@ const imageAltText ={
 
 /* Looping through images */
 
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
-
+imageFileNames.foreach(filename => {
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', imageFileNames);
+    newImage.setAttribute('alt', imageAltText);
+    img.addEventListener('click', () => {
+        displayedImg.src = imageFileNames;
+        displayedImg.alt = imageAltText;
+    })
+    thumbBar.appendChild(newImage);
+})
 /* Wiring up the Darken/Lighten button */
-
+let isDarkened = flase;
+darkenBtn.addEventListner('click', () => {
+    isDarkened = !isDarkened;
+    if (isDarkened) {
+        displayedImg.classList.add('darken'); /*this will apply the dark feature*/
+    } else {
+        displayedImg.classList.remove('darken'); /* this will remove the dark effect*/
+    }
+});
