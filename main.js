@@ -11,10 +11,10 @@ const altTexts = ['close up of eye', 'beige waves', 'purple flowers', 'hieroglyp
 /* Looping through images */
 images.forEach((filename, index) => { 
     const newImage = document.createElement('img');
-    newImage.setAttribute('src', 'images/' + images[index] + '.png');
+    newImage.setAttribute('src', 'images' + filename);
     newImage.setAttribute('alt', altTexts[index]);
     newImage.addEventListener('click', () => {
-        displayedImage.setAttribute('src', 'images/' + filename);
+        displayedImage.setAttribute('src', 'images' + filename);
         displayedImage.setAttribute('alt', altTexts[index]);
     });
     thumbBar.appendChild(newImage);
@@ -25,12 +25,12 @@ images.forEach((filename, index) => {
 const btn= document.querySelector('button');
 
 btn.addEventListener('click', function() {
-    if (btn.classList.contains('dark')) {
-        btn.classList.remove('dark');
+    if (btn.event.type.contains('dark')) {
+        btn.event.type.remove('dark');
         btn.textContent = 'Darken';
         overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
     }   else {
-        btn.classList.add('dark');
+        btn.event.type.add('light');
         btn.textContent = 'Lighten';
         overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     }
