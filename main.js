@@ -25,12 +25,12 @@ images.forEach((filename, index) => {
 const btn= document.querySelector('button');
 
 btn.addEventListener('click', function() {
-    if (btn.event.type.contains('dark')) {
-        btn.event.type.remove('dark');
+    if (btn.classList.contains('dark')) {
+        btn.classList.remove('dark');
         btn.textContent = 'Darken';
         overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
     }   else {
-        btn.event.type.add('light');
+        btn.classList.add('dark');
         btn.textContent = 'Lighten';
         overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
     }
