@@ -11,10 +11,10 @@ const altTexts = ['close up of eye', 'beige waves', 'purple flowers', 'hieroglyp
 /* Looping through images */
 images.forEach((filename, index) => { 
     const newImage = document.createElement('img');
-    newImage.setAttribute('src', 'images' + filename);
+    newImage.setAttribute('src', 'images/' + filename);
     newImage.setAttribute('alt', altTexts[index]);
     newImage.addEventListener('click', () => {
-        displayedImage.setAttribute('src', 'images' + filename);
+        displayedImage.setAttribute('src', 'images/' + filename);
         displayedImage.setAttribute('alt', altTexts[index]);
     });
     thumbBar.appendChild(newImage);
